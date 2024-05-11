@@ -1,28 +1,43 @@
-@startuml
+@startuml snake
 
-class Juego
-class Jugador
-class Vibora
-class Arena
-class Comida
-class Colisionable
-class Dimension
+class Juego {
+    -serpiente: Serpiente
+    -tablero: Tablero
+    +iniciarJuego(): void
+    +terminarJuego(): void
+}
 
+class Serpiente {
+    -cuerpo: Lista<Punto>
+    -direccion: Direccion
+    +mover(): void
+    +cambiarDireccion(nuevaDireccion: Direccion): void
+}
 
-Vibora o-- Arena
-Jugador o-- Vibora
+class Tablero {
+    -ancho: int
+    -alto: int
+    +dibujar(): void
+}
 
-Vibora *-- Dimension
-Arena *-- Colisionable
-Arena *-- Comida
+class Punto {
+    -x: int
+    -y: int
+}
 
-Vibora --|> Colisionable
-Arena --|> Colisionable
-Muro --|> Colisionable
+enum Direccion {
+    ARRIBA
+    ABAJO
+    IZQUIERDA
+    DERECHA
+}
 
+Juego --> Serpiente
+Juego --> Tablero
+Serpiente *-- Punto
+Tablero *-- Punto
 
-
-
-
+Serpiente "1" *-- "0..*" Punto
+Tablero "1" *-- "0..*" Punto
 
 @enduml
