@@ -19,9 +19,11 @@ int main(int argc, char const *argv[])
         pantalla.Clear();
         this_thread::sleep_for(.1s);
 
-        pantalla.PixelAt(x,5).character="   ,";
-        pantalla.PixelAt(x,6).character=".-/x-.,::";
-        pantalla.PixelAt(x,7).character="(_)'==(_)";
+        pantalla.PixelAt(x,5).character="            / . .| ";
+        pantalla.PixelAt(x,6).character="            |  ---< ";
+        pantalla.PixelAt(x,7).character="             |  / ";
+        pantalla.PixelAt(x,8).character="   __________/ / ";
+        pantalla.PixelAt(x,9).character="-=:___________/ ";
 
         pantalla.Print();
         cout<<pantalla.ResetPosition();

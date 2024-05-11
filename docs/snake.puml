@@ -2,32 +2,23 @@
 
 class Juego
 class Jugador
-class AI
-class Moto
-class Tron
+class Vibora
 class Arena
-class Oponente
-class Muro
-class Jet
-class Estela
+class Comida
 class Colisionable
+class Dimension
 
 
-Moto o-- Arena
-Tron o-- Moto
-Oponente o-- Moto
+Vibora o-- Arena
+Jugador o-- Vibora
 
-Jugador o-- Tron
-IA o-- Oponente
+Vibora *-- Dimension
+Arena *-- Colisionable
+Arena *-- Comida
 
-Moto *-- Estela
-Arena *-- Muro
-Arena *--Jet
-
-Moto --|> Colisionable
-Jet --|> Colisionable
+Vibora --|> Colisionable
+Arena --|> Colisionable
 Muro --|> Colisionable
-Estela --|> Colisionable
 
 
 
