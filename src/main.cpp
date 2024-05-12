@@ -11,8 +11,7 @@ using namespace ftxui;
 
 int main (int argc, char const *argv[])
 {
-    Dibujo moto("./assets/images/moto.txt");
-    Dibujo bloque("./assets/images/bloque.txt");
+    Dibujo snake("./assets/images/snake.txt");
 
     int fotograma=0;
     while(true)
@@ -20,7 +19,7 @@ int main (int argc, char const *argv[])
         this_thread::sleep_for(0.1s);
         fotograma++;
         Element personaje = spinner (21,fotograma)| bold | color(Color::Purple) | bgcolor(Color::White);
-        Element dibujo = hbox({personaje, moto.GetElement(), bloque.GetElement()});
+        Element dibujo = hbox({personaje, snake.GetElement()});
         Screen pantalla= Screen::Create(Dimension::Full());
         Render(pantalla,dibujo);
         pantalla.Print();
